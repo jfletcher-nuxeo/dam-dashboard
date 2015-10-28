@@ -52,26 +52,11 @@ module.exports = function (grunt) {
         // change this to '0.0.0.0' to access the server from outside
         hostname: '0.0.0.0'
       },
-      proxies: [
-        {
-          // Was unable to get the proxy working with the live server.
-          // Not an issue with this app; probably not an issue with grunt.
-          // The live server has an Apache reverse proxy. For whatever reason
-          // the rewriting was failing. Requests with "nuxeo" in the URL were
-          // being handled by Apache when using the proxy.
 
-          // I'm using "/nuxeo/site" here because "/nuxeo" is too broad and
-          // matches any URL with "/nuxeo" in it (like "nuxeo-elements").
-          context: '/nuxeo/site',
-          host: 'localhost',
-          port: '8080'
-        }
-        ],
       livereload: {
         options: {
           middleware: function () {
             return [
-              require('grunt-connect-proxy/lib/utils').proxyRequest,
               require('connect-livereload')({
                 port: LIVERELOAD_PORT
               }),
@@ -90,7 +75,6 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('serve', [
-      'configureProxies',
       'connect:livereload',
       'open',
       'watch'

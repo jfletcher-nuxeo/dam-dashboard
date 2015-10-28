@@ -19,7 +19,7 @@ Contributors:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <title>DAM Dashboard Demo</title>
+  <title>Charleys Dashboard Demo</title>
 
   <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
@@ -44,11 +44,11 @@ Contributors:
     }
     
     #logo {
-      background: transparent url('http://dam.cloud.nuxeo.com/nuxeo/img/nuxeo_dam_logo.png') no-repeat;
+      background: transparent url('http://charleys.cloud.nuxeo.com/nuxeo/img/logo_7.4.png') no-repeat;
       background-size: cover;
       display: inline-block;
-      height: 20px;
-      width: 186px;
+      height: 45px;
+      width: 89px;
       ;
     }
     
@@ -64,12 +64,12 @@ Contributors:
   <template is="dom-bind" id="app">
 
     <!-- Define a connection to our Nuxeo server -->
-    <nuxeo-connection url="/nuxeo"></nuxeo-connection>
+    <nuxeo-connection url="http://charleys.cloud.nuxeo.com/nuxeo" username="Administrator" password="Administrator"></nuxeo-connection>
 
     <paper-header-panel>
       <paper-toolbar>
         <div id="logo"></div>
-        <div id="header-title">DAM Dashboard</div>
+        <div id="header-title">Charleys Dashboard</div>
         <div id="header-spacer"></div>
       </paper-toolbar>
 
