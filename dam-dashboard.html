@@ -179,6 +179,7 @@ Example:
     },
 
     _prettyRows: function (data) {
+      // Look at picture:info in the object properties for picture. Need to check the others.
       for (var i = 0; i < data.length; i++) {
         if (data[i].key.indexOf("wordprocessing") > -1) data[i].key = "Word";
         if (data[i].key.indexOf("spreadsheet") > -1) data[i].key = "Excel";
